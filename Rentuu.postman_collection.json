@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "914c8c1b-5723-4258-a0db-6ab67618206c",
+		"name": "Rentuu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Articles",
+			"item": [
+				{
+					"name": "Get all articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/v1/articles",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "tag",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "15",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single article by slug",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/v1/articles/{{slug}}",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"{{slug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like article",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/v1/articles/{{slug}}/like",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"{{slug}}",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create comment",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "title",
+									"type": "default"
+								},
+								{
+									"key": "body",
+									"value": "body",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{hostname}}/api/v1/articles/{{slug}}/comments",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"{{slug}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "Tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/v1/tags",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "hostname",
+			"value": "0.0.0.0",
+			"type": "default"
+		}
+	]
+}
